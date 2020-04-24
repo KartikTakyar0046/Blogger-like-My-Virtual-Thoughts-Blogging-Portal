@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<head>
+	<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+</head>
+<body>
+  {% if user.is_authenticated %}
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">BLUE BLOG</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/create_post/">Add new Post</a></li>
+        <li><a href="/user/logout">Logout</a></li>
+      </ul>
+    </div>
+    </nav>
+    {% else %}
+    <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">BLUE BLOG</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/user/login">Login</a></li>
+        <li><a href="/user/register/">Register</a></li>
+      </ul>
+    </div>
+    </nav>
+    {% endif %}
+
+{% block content %} {% endblock %}
+        <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Designed By:- Kartik Takyar</h5>
+                <p class="grey-text text-lighten-4">Write down here what you got in your mind and get recognized</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+          
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/the._.demogorgon/", target="_blank">Instagram</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/kartik.takyar.7",target="_blank">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/kartik-takyar-03b729170/", target="_blank">Linkedin</a></li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyrighted Blogs
+ 
+            </div>
+          </div>
+        </footer>
+</body>
